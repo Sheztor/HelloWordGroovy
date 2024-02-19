@@ -19,6 +19,18 @@ static  void FileIO(){
   println "El contenido del archivo es: $contenidoArchivo"
 }
 
+static void standardStreams(){
+  def Reader = new BufferedReader(new InputStreamReader(System.in))
 
+  println "Ingresa tu nombre: "
 
-FileIO()
+  def nombre = Reader.readLine()
+
+  println "Hola $nombre"
+
+  System.out.println("Hola desde otro lugar $nombre")
+  System.err.println("Esto es un error")
+}
+
+//FileIO()
+standardStreams()
