@@ -3,7 +3,9 @@ static void main(String[] args) {
 
   //FileIO()
   //standardStreams()
-  variablesAmbiente()
+  //variablesAmbiente()
+
+  println("Argumento en el index 1: "+args[1])
 }
 
 static  void FileIO(){
