@@ -1,5 +1,9 @@
 static void main(String[] args) {
   println "Hello world!"
+
+  //FileIO()
+  //standardStreams()
+  variablesAmbiente()
 }
 
 static  void FileIO(){
@@ -32,5 +36,21 @@ static void standardStreams(){
   System.err.println("Esto es un error")
 }
 
-//FileIO()
-standardStreams()
+static void variablesAmbiente(){
+  println("*** Creando variable de ambiente ***")
+  System.setProperty("EL_AMBIENTE", "TEND. DE SOFTWARE")
+  println("La variable EL_AMBIENTE = ${System.getProperty('EL_AMBIENTE')} \n")
+
+  println("*** Eliminando variable de ambiente ***")
+  System.clearProperty("EL_AMBIENTE")
+  println("La variable EL_AMBIENTE = ${System.getProperty('EL_AMBIENTE')} \n")
+
+
+  println("*** Buscando una variable de ambiente, de una manera diferente ***")
+  def PATH = System.env['Path']
+  println("El Path es: $PATH \n")
+
+  println("*** Listando todas las variables de ambiente ***")
+  System.env.each{ key, value -> println("${key} = ${value}")}
+}
+
