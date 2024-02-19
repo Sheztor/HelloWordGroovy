@@ -4,6 +4,7 @@ static void main(String[] args) {
   //FileIO()
   //standardStreams()
   //variablesAmbiente()
+  net()
 
   println("Argumento en el index 1: "+args[1])
 }
@@ -54,5 +55,13 @@ static void variablesAmbiente(){
 
   println("*** Listando todas las variables de ambiente ***")
   System.env.each{ key, value -> println("${key} = ${value}")}
+}
+
+static void net(){
+  def url = new URL("https://pokeapi.co/api/v2/pokemon/ditto")
+
+  def text = url.text
+
+  println(text)
 }
 
